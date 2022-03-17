@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.i("list_jokes","liste")
+        Log.i("list_jokes", ListJokes.mocked.toString())
     }
 }
