@@ -1,14 +1,26 @@
 package com.example.appli_belgacem_behanzin
 
-class JokeAdapter {
-    var mocked= listOf("Chuck Norris didn't like watching Aaron Hernandez play football. So he sent him to prison so he wouldn't have to see him play again.",
-        "Chuck Norris's beard alone has experienced more than your entire body.",
-        "wil murphy slapped Chuck Norris",
-        "An apple a day keeps the doctor away\\\" Chuck Norris can keep the doctor away with a cheeseburger.",
-        "Why does Chuck Norris lower your blood pressure? Because he's a beater blocker",
-        "Chuck Norris has never lost \\\"The Game.\\",
-        "Chuck Norris once had an alcohol abuse problem. He entered a rehab center and completed the 12 step recovery program in a 1/2 step.",
-        "Chuck Norris eats haggis just for the fun.",
-        "Chuck Norris fears nothing. But fear fears Chuck Norris.",
-        "Chuck Norris snorts crushed-up glass.")
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.appli_belgacem_behanzin.ListJokes.mocked
+
+
+class JokeAdapter : RecyclerView.Adapter<JokeAdapter.JokeViewHolder>(){
+    inner class JokeViewHolder(val jokeTextView:TextView) : RecyclerView.ViewHolder(jokeTextView)
+
+    //créer la view holder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JokeAdapter.JokeViewHolder {
+        return JokeViewHolder(TextView(parent.context))
+    }
+
+    //utilsée pour en gros la prochaine view quand l'autre part
+    override fun onBindViewHolder(holder: JokeAdapter.JokeViewHolder, position: Int) {
+        holder.jokeTextView.text= mocked[position]
+    }
+
+    override fun getItemCount() = mocked.size
+
+
 }
