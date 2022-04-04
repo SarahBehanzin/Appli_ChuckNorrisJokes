@@ -18,5 +18,8 @@ class MainActivity : AppCompatActivity() {
         myRV.layoutManager = LinearLayoutManager(this)
 
         myRV.adapter = JokeAdapter()
+
+        val myService:JokeApiService=JokeApiServiceFactory.function_api()
+        val single_joke=myService.giveMeAJoke()
     }
 }

@@ -28,7 +28,7 @@ class JokeAdapter : RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
         holder.updateText(mocked[position])
     }
 
-    override fun getItemCount() = mocked.size
+    override fun getItemCount() = mocked.size//prend la taill de la Joke
 
 
 }
