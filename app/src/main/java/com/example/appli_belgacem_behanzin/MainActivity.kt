@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,13 @@ class MainActivity : AppCompatActivity() {
         myRV.adapter = JokeAdapter()
 
         val myService:JokeApiService=JokeApiServiceFactory.function_api()
-        val single_joke=myService.giveMeAJoke()
+
+        myService.giveMeAJoke()
+            .subscribeOn(Schedulers.io())
+            .subscribeBy(
+            onError = {Log.e("Erreur", "La Joke n'a pas été reçue.", it)},
+            onSuccess={Log.i("Joke reçue", it.toString())}
+        )
+
     }
 }

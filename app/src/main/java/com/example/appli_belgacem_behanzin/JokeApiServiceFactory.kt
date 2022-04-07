@@ -11,7 +11,7 @@ import retrofit2.create
 object JokeApiServiceFactory {
     fun function_api():JokeApiService=
         Retrofit.Builder()
-            .baseUrl("https://api.chucknorris.io/jokes")//on donne la base url
+            .baseUrl("https://api.chucknorris.io/jokes/")//on donne la base url
             //permet de convertir en Json
             .addConverterFactory(Json.asConverterFactory(MediaType.get("application/json")))
             //permet d'adapter la Factory avec la fonction create(fonction statique)
