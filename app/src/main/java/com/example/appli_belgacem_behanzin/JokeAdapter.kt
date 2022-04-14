@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appli_belgacem_behanzin.ListJokes.mocked
+import com.example.appli_belgacem_behanzin.ListJokes.new_mocked
 
 
 class JokeAdapter : RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
@@ -23,12 +24,12 @@ class JokeAdapter : RecyclerView.Adapter<JokeAdapter.JokeViewHolder>() {
         return JokeViewHolder(view)
     }
 
-    //utilsée pour en gros la prochaine view quand l'autre part
+    //utilsée pour afficher la prochaine view quand l'autre part
     override fun onBindViewHolder(holder: JokeAdapter.JokeViewHolder, position: Int) {
-        holder.updateText(mocked[position])
+        holder.updateText(new_mocked[position].value)
     }
 
-    override fun getItemCount() = mocked.size//prend la taill de la Joke
+    override fun getItemCount() = new_mocked.size//prends la taille de la Joke
 
 
 }
