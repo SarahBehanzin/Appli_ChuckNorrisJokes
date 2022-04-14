@@ -58,3 +58,6 @@ We are in the 2nd year of the engineering cycle at ESIEE Paris in the DataScienc
 This project allowed us to develop our skills in Kotlin but also in Java as it is a similar language. It allowed us to understand and know how to develop an Android application in Kotlin and to learn a lot of the features we have at our disposal.
 
 ## Areas for improvement <a name="p6"/>
+
+* We can improve the user interface like the screen rotation.
+* Additional features can be added, such as a button to share or save jokes
